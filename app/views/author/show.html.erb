@@ -1,0 +1,12 @@
+<% @page_title =
+     "Books by #{@author.first_name} #{@author.last_name}" %>
+<p>Click on any book to see all available publishers</p>
+<ul>
+  <% @author.books.each do |book| %>
+    <li><%= link_to book.title,
+	    :controller => "book",
+	    :action    => "show",
+            :id => book.id %>
+	    </li>
+  <% end %>
+</ul>

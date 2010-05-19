@@ -1,0 +1,315 @@
+
+
+Processing MainController#welcome (for 127.0.0.1 at 2010-05-19 07:34:53) [GET]
+  [4;36;1mAuthor Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: authors: SELECT * FROM "authors" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: authors: SELECT * FROM "authors" ):
+  app/controllers/main_controller.rb:3:in `welcome'
+
+Rendered rescues/_trace (102.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#welcome (for 127.0.0.1 at 2010-05-19 07:42:13) [GET]
+  [4;35;1mAuthor Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: authors: SELECT * FROM "authors" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: authors: SELECT * FROM "authors" ):
+  app/controllers/main_controller.rb:3:in `welcome'
+
+Rendered rescues/_trace (37.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainController#welcome (for 127.0.0.1 at 2010-05-19 07:47:38) [GET]
+  [4;36;1mAuthor Load (13.0ms)[0m   [0;1mSELECT * FROM `authors` [0m
+  [4;35;1mAuthor Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+Rendering template within layouts/base
+Rendering main/welcome
+Completed in 108ms (View: 76, DB: 14) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainController#welcome (for 127.0.0.1 at 2010-05-19 07:49:42) [GET]
+  [4;36;1mAuthor Load (0.5ms)[0m   [0;1mSELECT * FROM `authors` [0m
+  [4;35;1mAuthor Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+Rendering template within layouts/base
+Rendering main/welcome
+Completed in 45ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthorController#show (for 127.0.0.1 at 2010-05-19 07:49:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (81.0ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering author/show
+  [4;36;1mBook Load (9.6ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.author_id = 1) [0m
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+Completed in 182ms (View: 70, DB: 95) | 200 OK [http://localhost/author/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:49:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (8.4ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 43ms (View: 25, DB: 11) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:56:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.2ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 69ms (View: 47, DB: 5) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:57:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.3ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 67ms (View: 41, DB: 9) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:57:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.1ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.3ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 2181ms (View: 2030, DB: 4) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:58:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.2ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 2060ms (View: 2038, DB: 6) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:58:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (1.2ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 2060ms (View: 2037, DB: 7) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:58:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.3ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 20073ms (View: 20050, DB: 7) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 07:58:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.1ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:01:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.1ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 57ms (View: 38, DB: 2) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:02:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (9.4ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.3ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 75ms (View: 45, DB: 14) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:02:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (5.4ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.1ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 228ms (View: 36, DB: 10) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:04:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.3ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 69ms (View: 44, DB: 6) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainController#welcome (for 127.0.0.1 at 2010-05-19 08:04:46) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM `authors` [0m
+  [4;35;1mAuthor Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+Rendering template within layouts/base
+Rendering main/welcome
+Completed in 41ms (View: 21, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthorController#show (for 127.0.0.1 at 2010-05-19 08:04:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering author/show
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.author_id = 1) [0m
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+Completed in 58ms (View: 39, DB: 4) | 200 OK [http://localhost/author/show/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:05:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.1ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.1ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 123ms (View: 15, DB: 3) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:05:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.1ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.1ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 36ms (View: 14, DB: 4) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:05:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.3ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 56ms (View: 33, DB: 6) | 200 OK [http://localhost/book/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BookController#show (for 127.0.0.1 at 2010-05-19 08:07:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 1) [0m
+Rendering template within layouts/base
+Rendering book/show
+  [4;36;1mAuthor Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 1) [0m
+  [4;36;1mPublisher Load (0.1ms)[0m   [0;1mSELECT * FROM `publishers` WHERE (`publishers`.book_id = 1) [0m
+  [4;35;1mPublisher Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `publishers`[0m
+Completed in 55ms (View: 34, DB: 5) | 200 OK [http://localhost/book/show/1]

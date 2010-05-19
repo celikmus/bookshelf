@@ -1,0 +1,14 @@
+
+
+<p>Click on an author's name
+  to see all of that author's books.</p>
+
+<ul>
+  <% @authors.each do |author| %>
+    <li><%= link_to "#{author.first_name} #{author.last_name}",
+	    :controller => "author",
+	    :action    => "show",
+	    :id    => author.id %>
+    </li>
+  <% end %>
+</ul>

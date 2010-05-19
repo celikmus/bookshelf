@@ -1,0 +1,12 @@
+
+<p>Available Publishers of
+  <b><%= @book.title %> </b>by
+  <%= "#{@book.author.first_name} #{@book.author.last_name}" %>
+</p>
+  <ul>
+  <li>
+  <% @book.publishers.each do |pub| %>
+     <%= pub.name %> 
+  <% end %>
+  </li>
+  </ul>
