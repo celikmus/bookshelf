@@ -12,3 +12,95 @@
     </li>
   <% end %>
 </ul>
+
+<table border="1">
+<tr>
+<td>
+<p>Add new Book to your bookshelf:</p>
+ 
+<% form_for :book, :url => { :controller => "book", 
+                             :action => "create",
+                             :id     => "book.id"}  do |f| %>
+
+
+  <p>
+    <%= f.label :title, "Title:" %><br />
+    <%= f.text_field :title, :size => 40 %>
+  </p>
+
+  <p>
+     <%= f.label :year, "Publication Year:" %><br />
+     <%= f.text_field :year, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :publisher_id, "Publisher:" %><br />
+    <%= f.select (:publisher_id, Publisher.find(:all).collect {|s| [s.name, s.id]} ) %>
+  </p>
+
+
+  <p>
+    <%= f.label :author_id, "Author:" %><br />
+    <%= f.select (:author_id, Author.find(:all).collect {|s|
+    [s.last_name + ", " + s.first_name, s.id]} ) %>
+  </p>
+  <p>
+    <%= f.submit "Add book" %>
+  </p>
+
+<% end %>
+
+</td>
+
+<td>
+<p>Add new Author:</p>
+ 
+<% form_for :author, :url => { :controller => "author", 
+                               :action => "create",
+                               :id     => "author.id" }  do |f| %>
+
+
+  <p>
+    <%= f.label :first_name, "First Name:" %><br />
+    <%= f.text_field :first_name, :size => 40 %>
+  </p>
+
+  <p>
+     <%= f.label :last_name, "Last Name:" %><br />
+     <%= f.text_field :last_name, :size => 40 %>
+  </p>
+
+  <p>
+    <%= f.submit "Create author" %>
+  </p>
+
+<% end %>
+
+</td>
+
+<td>
+<p>Add new Publisher:</p>
+ 
+<% form_for :publisher1, :url => { :controller => "publisher", 
+                                   :action => "create",
+                                   :id     => "publisher.id"}  do |f| %>
+
+
+  <p>
+    <%= f.label :name, "Name:" %><br />
+    <%= f.text_field :name, :size => 40 %>
+  </p>
+
+  <p>
+    <% f.label :book_id => 1 %>
+  </p>
+
+  <p>
+    <%= f.submit "Create publisher" %>
+  </p>
+
+<% end %>
+
+</td>
+
+</tr>
+</table>

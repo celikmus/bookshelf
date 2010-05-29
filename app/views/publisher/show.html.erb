@@ -12,5 +12,14 @@
   </tr>
   <tr>
     <td><%= @publisher.name %></td>
+    <td><ul>
+       
+        <li> <%=@publisher.book.author.last_name + ",  " +  
+                @publisher.book.year.to_s + ": " +
+                @publisher.book.title %> </li>
+       
+        </ul>
+    </td>
   </tr>
+
 </table>
